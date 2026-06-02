@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — NestAsia Real Estate Portal</title>
+<meta name="description" content="Contact NestAsia for property queries, agent partnerships, advertising or support. Email us at brandtahir806@gmail.com or call our helpline.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1B4332;--green2:#2D6A4F;--green-light:#EFF8F3;--green-mid:#A8D5B8;--gold:#C9943A;--white:#FFFFFF;--bg:#F8F7F4;--bg2:#F2F0EB;--border:#E4E0D8;--text:#1A1A1A;--text2:#4B4B4B;--text3:#8A8A8A;--shadow:0 4px 20px rgba(0,0,0,0.09);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",sans-serif;}
+nav{background:rgba(255,255,255,0.97);border-bottom:1px solid var(--border);padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.07);}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.65rem;font-weight:700;color:var(--green);text-decoration:none;}
+.logo span{color:var(--gold);}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.84rem;font-weight:500;padding:8px 12px;border-radius:7px;transition:all .2s;}
+.nav-links a:hover{background:var(--bg2);color:var(--green);}
+.nav-links a.active{color:var(--green);font-weight:600;}
+.btn-post{background:var(--green);color:white;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;}
+.hero-inner{background:var(--green);padding:72px 5%;text-align:center;}
+.hero-inner h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:700;color:white;margin-bottom:14px;}
+.hero-inner h1 em{color:var(--gold);font-style:italic;}
+.hero-inner p{color:rgba(255,255,255,.65);font-size:.95rem;max-width:520px;margin:0 auto;line-height:1.7;}
+.breadcrumb{padding:14px 5%;font-size:.78rem;color:var(--text3);}
+.breadcrumb a{color:var(--green);text-decoration:none;}
+.contact-wrap{max-width:1000px;margin:0 auto;padding:56px 5%;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;}
+.contact-info h2{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:700;margin-bottom:14px;}
+.contact-info h2 em{color:var(--green);font-style:italic;}
+.contact-info p{font-size:.88rem;color:var(--text2);line-height:1.7;margin-bottom:24px;}
+.info-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:14px;display:flex;align-items:flex-start;gap:14px;}
+.info-icon{width:40px;height:40px;background:var(--green-light);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.info-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);margin-bottom:3px;}
+.info-val{font-size:.88rem;font-weight:600;color:var(--text);}
+.info-val a{color:var(--green);text-decoration:none;}
+.info-val a:hover{text-decoration:underline;}
+.info-sub{font-size:.72rem;color:var(--text3);margin-top:2px;}
+.social-row{display:flex;gap:10px;margin-top:20px;}
+.soc-btn{width:38px;height:38px;background:var(--white);border:1.5px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.85rem;cursor:pointer;text-decoration:none;transition:all .2s;}
+.soc-btn:hover{background:var(--green);border-color:var(--green);color:white;}
+.form-card{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:32px;box-shadow:var(--shadow);}
+.form-card h3{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:700;margin-bottom:6px;}
+.form-card p{font-size:.8rem;color:var(--text3);margin-bottom:22px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text2);margin-bottom:7px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:11px 14px;font-family:"Plus Jakarta Sans",sans-serif;font-size:.88rem;color:var(--text);outline:none;transition:border-color .2s;resize:vertical;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);}
+.form-group select option{background:white;}
+.submit-btn{width:100%;background:var(--green);color:white;border:none;padding:14px;border-radius:9px;font-family:"Plus Jakarta Sans",sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;transition:all .2s;}
+.submit-btn:hover{background:var(--green2);transform:translateY(-1px);box-shadow:0 6px 18px rgba(27,67,50,.3);}
+.success-msg{display:none;background:var(--green-light);border:1.5px solid var(--green-mid);border-radius:9px;padding:14px 18px;color:var(--green);font-weight:600;font-size:.88rem;margin-top:14px;text-align:center;}
+.faq-section{max-width:1000px;margin:0 auto;padding:0 5% 56px;}
+.faq-section h2{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:700;margin-bottom:20px;}
+.faq-section h2 em{color:var(--green);font-style:italic;}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:10px;cursor:pointer;transition:border-color .2s;}
+.faq-item:hover{border-color:var(--green-mid);}
+.faq-q{font-weight:600;font-size:.88rem;display:flex;justify-content:space-between;align-items:center;}
+.faq-a{font-size:.82rem;color:var(--text2);line-height:1.65;margin-top:10px;display:none;}
+.faq-a.open{display:block;}
+footer{background:#111;color:rgba(255,255,255,.6);padding:32px 5%;text-align:center;font-size:.78rem;}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 10px;}
+footer a:hover{color:var(--gold);}
+.logo-f{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:700;color:white;margin-bottom:10px;display:block;}
+.logo-f span{color:var(--gold);}
+@media(max-width:768px){.nav-links{display:none;}.contact-wrap{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;">
+    <svg viewBox="0 0 260 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:48px;width:auto;">
+      <defs>
+        <linearGradient id="goldN2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F0D980"/>
+          <stop offset="40%" stop-color="#C9943A"/>
+          <stop offset="100%" stop-color="#9A7A2E"/>
+        </linearGradient>
+      </defs>
+      <line x1="18" y1="54" x2="32" y2="6" stroke="url(#goldN2)" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="32" y1="6" x2="46" y2="54" stroke="url(#goldN2)" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="29" cy="28" r="1.5" fill="#C9943A" opacity=".65"/>
+      <circle cx="33" cy="24" r="1.9" fill="#C9943A" opacity=".78"/>
+      <circle cx="37" cy="27" r="1.4" fill="#C9943A" opacity=".6"/>
+      <circle cx="35" cy="32" r="1.3" fill="#C9943A" opacity=".65"/>
+      <circle cx="30" cy="34" r="1.2" fill="#C9943A" opacity=".55"/>
+      <circle cx="38" cy="34" r="1.1" fill="#C9943A" opacity=".5"/>
+      <circle cx="33" cy="40" r="1.0" fill="#C9943A" opacity=".5"/>
+      <circle cx="36" cy="43" r="0.9" fill="#C9943A" opacity=".4"/>
+      <path d="M14 44 Q32 22 50 34" stroke="url(#goldN2)" stroke-width="1.8" fill="none" opacity=".8"/>
+      <text x="60" y="30" font-family="Cormorant Garamond, Georgia, serif" font-size="18" font-weight="400" letter-spacing="4" fill="#1A1814">EXPLORE</text>
+      <text x="155" y="30" font-family="Cormorant Garamond, Georgia, serif" font-size="18" font-weight="600" letter-spacing="4" fill="url(#goldN2)">ASIA</text>
+      <line x1="60" y1="40" x2="116" y2="40" stroke="url(#goldN2)" stroke-width="0.7" opacity=".65"/>
+      <line x1="195" y1="40" x2="255" y2="40" stroke="url(#goldN2)" stroke-width="0.7" opacity=".65"/>
+      <text x="157" y="52" font-family="Jost, sans-serif" font-size="7.5" font-weight="400" letter-spacing="5" fill="#C9943A" text-anchor="middle">PROPERTIES</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+  <a href="index.html#search" class="btn-post">+ Post Free Ad</a>
+</nav>
+
+<div class="hero-inner">
+  <h1>Get in <em>Touch</em></h1>
+  <p>Have a question, feedback or want to partner with us? Our team is ready to help you within 24 hours.</p>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; Contact Us</div>
+
+<div class="contact-wrap">
+  <div class="contact-info">
+    <h2>We Are Here to <em>Help</em></h2>
+    <p>Whether you are a buyer looking for your dream home, an agent wanting to list properties, or a business wanting to advertise with us — we are happy to hear from you.</p>
+
+    <div class="info-card">
+      <div class="info-icon">&#128140;</div>
+      <div>
+        <div class="info-label">Email Us</div>
+        <div class="info-val"><a href="mailto:brandtahir806@gmail.com">brandtahir806@gmail.com</a></div>
+        <div class="info-sub">We reply within 24 hours on working days</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">&#128222;</div>
+      <div>
+        <div class="info-label">Call / WhatsApp</div>
+        <div class="info-val"><a href="tel:+918001234567">+91 800-123-4567</a></div>
+        <div class="info-sub">Mon&ndash;Sat, 9 AM to 8 PM IST</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">&#127968;</div>
+      <div>
+        <div class="info-label">Registered Address</div>
+        <div class="info-val">NestAsia Technologies Pvt. Ltd.</div>
+        <div class="info-sub">Level 12, Tower B, Cyber City, Gurugram, Haryana 122002, India</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">&#128336;</div>
+      <div>
+        <div class="info-label">Working Hours</div>
+        <div class="info-val">Monday to Saturday</div>
+        <div class="info-sub">9:00 AM &ndash; 8:00 PM IST &middot; Sunday: Closed</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">&#128176;</div>
+      <div>
+        <div class="info-label">Advertise With Us</div>
+        <div class="info-val"><a href="mailto:brandtahir806@gmail.com">brandtahir806@gmail.com</a></div>
+        <div class="info-sub">For banner ads, sponsored listings & partnerships</div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <a href="#" class="soc-btn">&#120143;</a>
+      <a href="#" class="soc-btn">f</a>
+      <a href="#" class="soc-btn">in</a>
+      <a href="#" class="soc-btn">YT</a>
+      <a href="#" class="soc-btn">IG</a>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h3>Send Us a Message</h3>
+    <p>Fill the form below and we will get back to you as soon as possible.</p>
+    <div class="form-row">
+      <div class="form-group"><label>First Name *</label><input type="text" placeholder="Rahul"></div>
+      <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Sharma"></div>
+    </div>
+    <div class="form-group"><label>Email Address *</label><input type="email" placeholder="your@email.com"></div>
+    <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"></div>
+    <div class="form-group">
+      <label>Your Query Is About *</label>
+      <select>
+        <option value="">Select a topic...</option>
+        <option>Property Search Help</option>
+        <option>Listing / Post Ad</option>
+        <option>Agent Registration</option>
+        <option>Home Loan Enquiry</option>
+        <option>RERA Verification</option>
+        <option>Advertise on NestAsia</option>
+        <option>Report Fraudulent Listing</option>
+        <option>Technical / Website Issue</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Message *</label><textarea rows="5" placeholder="Write your message here..."></textarea></div>
+    <button class="submit-btn" onclick="submitForm()">Send Message &rarr;</button>
+    <div class="success-msg" id="successMsg">&#10003; Thank you! Your message has been sent. We will reply to brandtahir806@gmail.com within 24 hours.</div>
+  </div>
+</div>
+
+<div class="faq-section">
+  <h2>Frequently Asked <em>Questions</em></h2>
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-q">How do I list my property on NestAsia? <span>+</span></div>
+    <div class="faq-a">Click the "Post Free Ad" button on the top right. Fill in your property details, upload photos, and submit. Basic listing is completely free. Your listing will be live within 24 hours after verification.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-q">Is NestAsia free to use for property seekers? <span>+</span></div>
+    <div class="faq-a">Yes, completely free. Browsing listings, contacting agents, using EMI calculator, RERA checker, and all other tools are 100% free for buyers and tenants. No hidden charges.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-q">How do I verify a property is RERA registered? <span>+</span></div>
+    <div class="faq-a">Use our RERA Checker tool on the homepage. Enter the project RERA registration number and select your state. We cross-check with the state RERA database and show you the status instantly.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-q">How can I report a fake or fraudulent listing? <span>+</span></div>
+    <div class="faq-a">Please email us immediately at brandtahir806@gmail.com with the listing URL and reason for concern. We take fraud reports very seriously and investigate within 48 hours. Fraudulent listings are removed immediately.</div>
+  </div>
+  <div class="faq-item" onclick="toggleFAQ(this)">
+    <div class="faq-q">How can I advertise on NestAsia? <span>+</span></div>
+    <div class="faq-a">We offer banner advertising, sponsored property listings, and featured agent profiles. Email us at brandtahir806@gmail.com with subject "Advertising Enquiry" and we will send you our media kit and pricing.</div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="logo-f">Nest<span>Asia</span></a>
+  <div style="margin-bottom:12px;">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+  </div>
+  <p>&copy; 2025 NestAsia. All rights reserved. | Email: brandtahir806@gmail.com</p>
+</footer>
+
+<script>
+function submitForm(){
+  document.getElementById("successMsg").style.display="block";
+}
+function toggleFAQ(el){
+  const a = el.querySelector(".faq-a");
+  const s = el.querySelector(".faq-q span");
+  const isOpen = a.classList.contains("open");
+  document.querySelectorAll(".faq-a").forEach(x=>x.classList.remove("open"));
+  document.querySelectorAll(".faq-q span").forEach(x=>x.textContent="+");
+  if(!isOpen){a.classList.add("open");s.textContent="&minus;";}
+}
+</script>
+</body>
+</html>
