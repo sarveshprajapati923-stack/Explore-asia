@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173b2b" />
+  <title>Green Cafe | Fresh Bites, Great Vibes</title>
+  <meta name="description" content="Discover Green Cafe in Kushinagar — a cozy place for coffee, refreshing drinks, and delicious bites." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#173b2b;--green2:#285a40;--cream:#f7f4ec;--orange:#e8a653;--ink:#202720;--muted:#68736a;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream)}
+    a{text-decoration:none;color:inherit} img{display:block;width:100%;object-fit:cover}
+    .topbar{background:var(--green);color:#f5f1e8;text-align:center;padding:9px 16px;font-size:12px;letter-spacing:.08em}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px clamp(20px,6vw,90px);background:rgba(247,244,236,.96);position:sticky;top:0;z-index:10;border-bottom:1px solid #e9e4d9}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700;color:var(--green);font-size:19px;letter-spacing:-.03em}
+    .logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:22px}
+    nav{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:600;color:#48564b}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:100px;background:var(--green);color:#fff;padding:13px 20px;font-size:13px;font-weight:700;transition:.2s}
+    .nav-cta:hover,.button:hover{background:var(--green2);transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:570px;background:var(--cream)}
+    .hero-copy{padding:clamp(42px,7vw,100px) clamp(24px,7vw,100px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+    .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--green2);font-weight:700;display:flex;align-items:center;gap:9px}
+    .eyebrow:before{content:"";width:26px;height:2px;background:var(--orange)}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(45px,5.3vw,76px);line-height:1.03;letter-spacing:-.045em;color:var(--green);font-weight:600;margin:22px 0}
+    h1 em{font-style:normal;color:#c17b34}
+    .hero-copy p{font-size:16px;line-height:1.8;color:var(--muted);max-width:440px;margin-bottom:27px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .button.secondary{background:transparent;color:var(--green);border:1px solid #c9d1c6}
+    .button.secondary:hover{background:#e9eee7}
+    .hero-note{display:flex;align-items:center;gap:10px;margin-top:28px;color:#647166;font-size:12px}
+    .dots{color:var(--orange);letter-spacing:3px}
+    .hero-image{position:relative;min-height:430px;background:#d8dfd2;overflow:hidden}
+    .hero-image img{height:100%;position:absolute;inset:0}
+    .image-card{position:absolute;bottom:28px;left:28px;background:rgba(255,255,255,.94);padding:17px 20px;border-radius:14px;box-shadow:0 12px 35px #10271922}
+    .image-card strong{display:block;color:var(--green);font-family:'Playfair Display',serif;font-size:19px}
+    .image-card span{font-size:11px;color:var(--muted)}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:27px clamp(22px,7vw,100px);background:#eaece3;border-top:1px solid #e0e4d9;border-bottom:1px solid #e0e4d9}
+    .trust-item{display:flex;justify-content:center;align-items:center;gap:12px;text-align:left}
+    .trust-icon{font-size:24px}.trust-item strong{display:block;font-size:13px;color:var(--green)}.trust-item span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+    section{padding:82px clamp(22px,7vw,100px)}
+    .section-head{text-align:center;max-width:580px;margin:0 auto 38px}
+    .section-head .eyebrow{justify-content:center}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,48px);line-height:1.12;color:var(--green);font-weight:600;margin:15px 0}
+    .section-head p{color:var(--muted);font-size:14px;line-height:1.8}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .menu-card{background:#fff;border:1px solid #ece9df;border-radius:18px;overflow:hidden;transition:.25s}
+    .menu-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #193a2812}
+    .menu-card img{height:205px}
+    .menu-content{padding:20px}
+    .menu-title{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .menu-title h3{font-family:'Playfair Display',serif;font-size:21px;color:var(--green);margin-bottom:7px}
+    .price{font-weight:700;color:#b66c27;font-size:14px;white-space:nowrap}
+    .menu-content p{font-size:12px;line-height:1.65;color:var(--muted);margin-bottom:0}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,95px);align-items:center;background:#e9eee5}
+    .about-image{position:relative;padding:0 22px 22px 0}
+    .about-image img{height:410px;border-radius:18px}
+    .about-image:after{content:"";position:absolute;right:0;bottom:0;width:62%;height:62%;border:2px solid var(--orange);border-radius:18px;z-index:0}
+    .about-image img{position:relative;z-index:1}
+    .about-copy .eyebrow{margin-bottom:14px}
+    .about-copy p{color:var(--muted);font-size:14px;line-height:1.9}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:25px 0 28px}
+    .feature{display:flex;gap:10px;align-items:flex-start;font-size:12px;font-weight:600;color:#405145}
+    .feature span{font-size:18px}
+    .visit{background:var(--green);color:#fff;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+    .visit h2{color:#fff}.visit .eyebrow{color:#d5e1d5}.visit p{color:#d1dbd1;font-size:14px;line-height:1.8;max-width:490px}
+    .visit-card{background:#fff;color:var(--ink);padding:27px;border-radius:18px}
+    .visit-line{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid #edf0e9}
+    .visit-line:last-child{border-bottom:0}
+    .visit-line .icon{font-size:21px}.visit-line strong{display:block;font-size:13px;color:var(--green);margin-bottom:4px}.visit-line span{font-size:12px;color:var(--muted);line-height:1.6}
+    .visit-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .visit .button{background:var(--orange);color:#1c3023}.visit .button.secondary{border-color:#77907e;color:#fff;background:transparent}
+    footer{background:#102d20;color:#d5dfd5;padding:28px clamp(22px,7vw,100px);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px}
+    footer strong{font-size:14px;color:#fff}
+    .demo-note{font-size:10px;color:#aab8ac;margin-top:7px}
+    @media(max-width:800px){header{padding:14px 20px}nav{gap:14px}nav a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:58px 25px 48px}.hero-image{min-height:360px}.trust-row{padding:22px 16px;gap:10px}.trust-item{gap:7px}.trust-icon{font-size:20px}.trust-item strong{font-size:11px}.trust-item span{font-size:10px}section{padding:62px 22px}.menu-grid{grid-template-columns:repeat(2,1fr)}.about,.visit{grid-template-columns:1fr}.about-image img{height:330px}.visit-card{max-width:520px}}
+    @media(max-width:520px){.brand{font-size:16px}.logo{width:36px;height:36px}.nav-cta{padding:11px 14px;font-size:11px}.hero-image{min-height:300px}.trust-row{grid-template-columns:1fr;gap:15px}.trust-item{justify-content:flex-start;padding-left:18%}.menu-grid{grid-template-columns:1fr}.menu-card img{height:225px}.features{grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topbar">A LITTLE GREEN, A LOT OF GOODNESS · KUSHINAGAR</div>
+  <header>
+    <a class="brand" href="#home" aria-label="Green Cafe home"><span class="logo">♧</span><span>GREEN <span style="font-weight:400">CAFE</span></span></a>
+    <nav>
+      <a href="#menu">Our Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#visit">Find Us</a>
+      <a class="nav-cta" href="#visit">Visit Green Cafe ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="padding:0">
+      <div class="hero-copy">
+        <div class="eyebrow">Your cozy corner in Kushinagar</div>
+        <h1>Good food.<br><em>Good mood.</em></h1>
+        <p>Take a little break from the busy day. Enjoy refreshing drinks, comforting bites, and good moments at Green Cafe.</p>
+        <div class="hero-actions">
+          <a class="button" href="#menu">Explore the Menu <span>→</span></a>
+          <a class="button secondary" href="#visit">Get Directions</a>
+        </div>
+        <div class="hero-note"><span class="dots">✦ ✦ ✦</span> Fresh moments are better shared.</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=85" alt="Freshly prepared coffee on a cafe table">
+        <div class="image-card"><strong>Your everyday happy place</strong><span>Relax · Refresh · Recharge</span></div>
+      </div>
+    </section>
+
+    <div class="trust-row">
+      <div class="trust-item"><span class="trust-icon">☕</span><div><strong>Made for your breaks</strong><span>Take a moment for yourself</span></div></div>
+      <div class="trust-item"><span class="trust-icon">🌿</span><div><strong>Fresh feel, cozy vibes</strong><span>A welcoming cafe experience</span></div></div>
+      <div class="trust-item"><span class="trust-icon">♡</span><div><strong>Better together</strong><span>Meet, chat, and make memories</span></div></div>
+    </div>
+
+    <section id="menu">
+      <div class="section-head">
+        <div class="eyebrow">A little something for everyone</div>
+        <h2>Made to make you smile.</h2>
+        <p>From your coffee break to a quick bite with friends, find your next favorite here.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Iced coffee">
+          <div class="menu-content"><div class="menu-title"><h3>Chilled Coffee</h3><span class="price">₹—</span></div><p>A cool, creamy pick-me-up for a refreshing break.</p></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80" alt="Fresh sandwich">
+          <div class="menu-content"><div class="menu-title"><h3>Fresh Sandwich</h3><span class="price">₹—</span></div><p>A satisfying bite for those little hunger moments.</p></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Burger with fresh toppings">
+          <div class="menu-content"><div class="menu-title"><h3>Classic Burger</h3><span class="price">₹—</span></div><p>A comfort-food favorite, perfect for sharing good times.</p></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80" alt="Hot coffee">
+          <div class="menu-content"><div class="menu-title"><h3>Hot Coffee</h3><span class="price">₹—</span></div><p>Warm, comforting, and made for a slower moment.</p></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80" alt="Crispy french fries">
+          <div class="menu-content"><div class="menu-title"><h3>Crispy Fries</h3><span class="price">₹—</span></div><p>A golden, crunchy side for your favorite cafe treat.</p></div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="Refreshing cold drink">
+          <div class="menu-content"><div class="menu-title"><h3>Cool Refreshers</h3><span class="price">₹—</span></div><p>Bright, refreshing sips to lift your day.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85" alt="Warm and inviting cafe interior">
+      </div>
+      <div class="about-copy">
+        <div class="eyebrow">More than just a cafe</div>
+        <h2>A place to pause and enjoy.</h2>
+        <p>Some days call for a quick coffee. Others call for a long conversation with friends. Green Cafe is your spot to slow down, enjoy a bite, and make ordinary moments feel special.</p>
+        <p>Drop by with friends, meet someone new, or simply treat yourself to a little break.</p>
+        <div class="features">
+          <div class="feature"><span>✦</span><div>Comfortable cafe atmosphere</div></div>
+          <div class="feature"><span>☕</span><div>Drinks for every mood</div></div>
+          <div class="feature"><span>♡</span><div>Great for catching up</div></div>
+          <div class="feature"><span>📍</span><div>Easy to find in Kushinagar</div></div>
+        </div>
+        <a class="button" href="#visit">Plan Your Visit →</a>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div>
+        <div class="eyebrow">Come say hello</div>
+        <h2>Your table is<br>waiting.</h2>
+        <p>Planning a coffee break or meeting friends? Find Green Cafe in the Kushinagar area and stop by for a little refresh.</p>
+        <div class="visit-actions">
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=Green+Cafe+Kushinagar" target="_blank" rel="noopener">Open Google Maps ↗</a>
+          <a class="button secondary" href="tel:9277077100">Call the Cafe</a>
+        </div>
+      </div>
+      <div class="visit-card">
+        <div class="visit-line"><span class="icon">📍</span><div><strong>Location</strong><span>Green Cafe, Kushinagar, Uttar Pradesh</span></div></div>
+        <div class="visit-line"><span class="icon">🕒</span><div><strong>Opening Hours</strong><span>Hours can be added here once confirmed.</span></div></div>
+        <div class="visit-line"><span class="icon">☎️</span><div><strong>Contact</strong><span>Tap “Call the Cafe” to connect.</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>GREEN CAFE</strong><div class="demo-note">Website concept preview · Menu, prices, timings and contact details should be confirmed by the owner.</div></div>
+    <div>© <span id="year"></span> Green Cafe · Made with care</div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
