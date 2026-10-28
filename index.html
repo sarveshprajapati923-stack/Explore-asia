@@ -1,197 +1,1636 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#173b2b" />
-  <title>Green Cafe | Fresh Bites, Great Vibes</title>
-  <meta name="description" content="Discover Green Cafe in Kushinagar — a cozy place for coffee, refreshing drinks, and delicious bites." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--green:#173b2b;--green2:#285a40;--cream:#f7f4ec;--orange:#e8a653;--ink:#202720;--muted:#68736a;--white:#fff}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream)}
-    a{text-decoration:none;color:inherit} img{display:block;width:100%;object-fit:cover}
-    .topbar{background:var(--green);color:#f5f1e8;text-align:center;padding:9px 16px;font-size:12px;letter-spacing:.08em}
-    header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px clamp(20px,6vw,90px);background:rgba(247,244,236,.96);position:sticky;top:0;z-index:10;border-bottom:1px solid #e9e4d9}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:700;color:var(--green);font-size:19px;letter-spacing:-.03em}
-    .logo{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:22px}
-    nav{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:600;color:#48564b}
-    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:100px;background:var(--green);color:#fff;padding:13px 20px;font-size:13px;font-weight:700;transition:.2s}
-    .nav-cta:hover,.button:hover{background:var(--green2);transform:translateY(-1px)}
-    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:570px;background:var(--cream)}
-    .hero-copy{padding:clamp(42px,7vw,100px) clamp(24px,7vw,100px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-    .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--green2);font-weight:700;display:flex;align-items:center;gap:9px}
-    .eyebrow:before{content:"";width:26px;height:2px;background:var(--orange)}
-    h1,h2,h3,p{margin-top:0}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(45px,5.3vw,76px);line-height:1.03;letter-spacing:-.045em;color:var(--green);font-weight:600;margin:22px 0}
-    h1 em{font-style:normal;color:#c17b34}
-    .hero-copy p{font-size:16px;line-height:1.8;color:var(--muted);max-width:440px;margin-bottom:27px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-    .button.secondary{background:transparent;color:var(--green);border:1px solid #c9d1c6}
-    .button.secondary:hover{background:#e9eee7}
-    .hero-note{display:flex;align-items:center;gap:10px;margin-top:28px;color:#647166;font-size:12px}
-    .dots{color:var(--orange);letter-spacing:3px}
-    .hero-image{position:relative;min-height:430px;background:#d8dfd2;overflow:hidden}
-    .hero-image img{height:100%;position:absolute;inset:0}
-    .image-card{position:absolute;bottom:28px;left:28px;background:rgba(255,255,255,.94);padding:17px 20px;border-radius:14px;box-shadow:0 12px 35px #10271922}
-    .image-card strong{display:block;color:var(--green);font-family:'Playfair Display',serif;font-size:19px}
-    .image-card span{font-size:11px;color:var(--muted)}
-    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:27px clamp(22px,7vw,100px);background:#eaece3;border-top:1px solid #e0e4d9;border-bottom:1px solid #e0e4d9}
-    .trust-item{display:flex;justify-content:center;align-items:center;gap:12px;text-align:left}
-    .trust-icon{font-size:24px}.trust-item strong{display:block;font-size:13px;color:var(--green)}.trust-item span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
-    section{padding:82px clamp(22px,7vw,100px)}
-    .section-head{text-align:center;max-width:580px;margin:0 auto 38px}
-    .section-head .eyebrow{justify-content:center}
-    h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,48px);line-height:1.12;color:var(--green);font-weight:600;margin:15px 0}
-    .section-head p{color:var(--muted);font-size:14px;line-height:1.8}
-    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .menu-card{background:#fff;border:1px solid #ece9df;border-radius:18px;overflow:hidden;transition:.25s}
-    .menu-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #193a2812}
-    .menu-card img{height:205px}
-    .menu-content{padding:20px}
-    .menu-title{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-    .menu-title h3{font-family:'Playfair Display',serif;font-size:21px;color:var(--green);margin-bottom:7px}
-    .price{font-weight:700;color:#b66c27;font-size:14px;white-space:nowrap}
-    .menu-content p{font-size:12px;line-height:1.65;color:var(--muted);margin-bottom:0}
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,95px);align-items:center;background:#e9eee5}
-    .about-image{position:relative;padding:0 22px 22px 0}
-    .about-image img{height:410px;border-radius:18px}
-    .about-image:after{content:"";position:absolute;right:0;bottom:0;width:62%;height:62%;border:2px solid var(--orange);border-radius:18px;z-index:0}
-    .about-image img{position:relative;z-index:1}
-    .about-copy .eyebrow{margin-bottom:14px}
-    .about-copy p{color:var(--muted);font-size:14px;line-height:1.9}
-    .features{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:25px 0 28px}
-    .feature{display:flex;gap:10px;align-items:flex-start;font-size:12px;font-weight:600;color:#405145}
-    .feature span{font-size:18px}
-    .visit{background:var(--green);color:#fff;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
-    .visit h2{color:#fff}.visit .eyebrow{color:#d5e1d5}.visit p{color:#d1dbd1;font-size:14px;line-height:1.8;max-width:490px}
-    .visit-card{background:#fff;color:var(--ink);padding:27px;border-radius:18px}
-    .visit-line{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid #edf0e9}
-    .visit-line:last-child{border-bottom:0}
-    .visit-line .icon{font-size:21px}.visit-line strong{display:block;font-size:13px;color:var(--green);margin-bottom:4px}.visit-line span{font-size:12px;color:var(--muted);line-height:1.6}
-    .visit-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-    .visit .button{background:var(--orange);color:#1c3023}.visit .button.secondary{border-color:#77907e;color:#fff;background:transparent}
-    footer{background:#102d20;color:#d5dfd5;padding:28px clamp(22px,7vw,100px);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px}
-    footer strong{font-size:14px;color:#fff}
-    .demo-note{font-size:10px;color:#aab8ac;margin-top:7px}
-    @media(max-width:800px){header{padding:14px 20px}nav{gap:14px}nav a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:58px 25px 48px}.hero-image{min-height:360px}.trust-row{padding:22px 16px;gap:10px}.trust-item{gap:7px}.trust-icon{font-size:20px}.trust-item strong{font-size:11px}.trust-item span{font-size:10px}section{padding:62px 22px}.menu-grid{grid-template-columns:repeat(2,1fr)}.about,.visit{grid-template-columns:1fr}.about-image img{height:330px}.visit-card{max-width:520px}}
-    @media(max-width:520px){.brand{font-size:16px}.logo{width:36px;height:36px}.nav-cta{padding:11px 14px;font-size:11px}.hero-image{min-height:300px}.trust-row{grid-template-columns:1fr;gap:15px}.trust-item{justify-content:flex-start;padding-left:18%}.menu-grid{grid-template-columns:1fr}.menu-card img{height:225px}.features{grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f4eb">
+
+<title>Bhadrakali Wala Bajar — Shop Different.</title>
+<meta name="description" content="Discover clothing, fashion, jewellery and accessories at Bhadrakali Wala Bajar. Explore your local shopping destination.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f4eb;
+  --black: #171717;
+  --yellow: #e9ff47;
+  --pink: #ff8eaf;
+  --blue: #b8d9ff;
+  --white: #ffffff;
+  --border: 2px solid var(--black);
+  --shadow: 5px 5px 0 var(--black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--black);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(1200px, 92%);
+  margin: auto;
+}
+
+/* ANNOUNCEMENT */
+
+.announcement {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: var(--border);
+}
+
+.nav {
+  width: min(1200px, 92%);
+  min-height: 76px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.logo-symbol {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  border: var(--border);
+  font-size: 25px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -.5px;
+}
+
+.logo-text small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.btn {
+  min-height: 45px;
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--yellow);
+  color: var(--black);
+  border: var(--border);
+  box-shadow: 3px 3px 0 var(--black);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: .15s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--black);
+}
+
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+  box-shadow: 3px 3px 0 var(--yellow);
+}
+
+.btn-pink {
+  background: var(--pink);
+}
+
+/* HERO */
+
+.hero {
+  padding: 48px 0 65px;
+  border-bottom: var(--border);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.label {
+  display: inline-block;
+  padding: 7px 11px;
+  border: var(--border);
+  background: var(--pink);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-top: 23px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(52px, 7vw, 94px);
+  line-height: .94;
+  letter-spacing: -5px;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--black);
+  -webkit-text-stroke: 1.5px var(--black);
+  text-shadow: 4px 4px 0 var(--yellow);
+}
+
+.hero-description {
+  max-width: 440px;
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 27px;
+}
+
+.hero-note {
+  margin-top: 24px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.hero-note span {
+  color: #c58100;
+  letter-spacing: 2px;
+}
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+}
+
+.hero-image-frame {
+  height: 465px;
+  border: 3px solid var(--black);
+  box-shadow: 9px 9px 0 var(--black);
+  background: var(--pink);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-image-frame img {
+  transition: transform .5s ease;
+}
+
+.hero-image-frame:hover img {
+  transform: scale(1.04);
+}
+
+.image-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: var(--yellow);
+  border: var(--border);
+  padding: 8px 10px;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hero-sticker {
+  position: absolute;
+  right: -15px;
+  bottom: -20px;
+  width: 115px;
+  height: 115px;
+  border: 3px solid var(--black);
+  background: var(--pink);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  transform: rotate(8deg);
+  z-index: 2;
+}
+
+/* MOVING STRIP */
+
+.marquee {
+  background: var(--yellow);
+  border-bottom: var(--border);
+  overflow: hidden;
+  padding: 15px 0;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: move 24s linear infinite;
+}
+
+.marquee-track span {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 22px;
+}
+
+.marquee-track span::after {
+  content: " ✳ ";
+  margin-left: 30px;
+}
+
+@keyframes move {
+  to { transform: translateX(-50%); }
+}
+
+/* SECTION HEADINGS */
+
+.section {
+  padding: 85px 0;
+  border-bottom: var(--border);
+}
+
+.section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.section-kicker {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(32px, 5vw, 57px);
+  letter-spacing: -2px;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.section-description {
+  max-width: 350px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* COLLECTIONS */
+
+.collections {
+  background: var(--bg);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.category-card {
+  border: var(--border);
+  background: var(--white);
+  box-shadow: 4px 4px 0 var(--black);
+  min-width: 0;
+  transition: .18s ease;
+}
+
+.category-card:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 7px 7px 0 var(--black);
+}
+
+.category-image {
+  height: 230px;
+  overflow: hidden;
+  border-bottom: var(--border);
+  background: var(--blue);
+}
+
+.category-image img {
+  transition: transform .35s ease;
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-content {
+  padding: 16px 14px;
+}
+
+.category-number {
+  font-size: 10px;
+  font-weight: 900;
+  color: #777;
+}
+
+.category-content h3 {
+  margin: 8px 0;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 17px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.category-content p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #514b45;
+}
+
+.category-link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 3px;
+}
+
+/* STATEMENT */
+
+.statement {
+  background: var(--pink);
+  padding: 75px 0;
+  border-bottom: var(--border);
+}
+
+.statement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.statement h2 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(37px, 6vw, 70px);
+  line-height: .98;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+}
+
+.statement h2 span {
+  color: var(--white);
+  -webkit-text-stroke: 1.5px var(--black);
+  text-shadow: 3px 3px 0 var(--black);
+}
+
+.statement-copy {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.feature-list {
+  margin-top: 24px;
+  border-top: var(--border);
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: var(--border);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  border: var(--border);
+  background: var(--yellow);
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.feature-row strong {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.feature-row p {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* MARKET FACTS */
+
+.facts {
+  background: var(--black);
+  color: var(--white);
+  padding: 28px 0;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fact {
+  padding: 12px 20px;
+  border-right: 1px solid #575757;
+  text-align: center;
+}
+
+.fact:last-child {
+  border-right: none;
+}
+
+.fact strong {
+  display: block;
+  color: var(--yellow);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 30px;
+}
+
+.fact span {
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* REVIEWS */
+
+.reviews {
+  background: var(--bg);
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.review-card {
+  padding: 23px;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+.review-stars {
+  color: #b57a00;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+.review-card h3 {
+  margin-top: 18px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+.review-card p {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.review-card small {
+  display: block;
+  margin-top: 17px;
+  font-size: 10px;
+  color: #68615c;
+  font-weight: 700;
+}
+
+/* LOCATION */
+
+.location {
+  background: var(--blue);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 35px;
+  align-items: stretch;
+}
+
+.location-info {
+  border: var(--border);
+  background: var(--bg);
+  padding: 27px;
+  box-shadow: var(--shadow);
+}
+
+.location-info h3 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 27px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.info-item {
+  display: flex;
+  gap: 13px;
+  padding: 18px 0;
+  border-bottom: 1px solid #c9c5bc;
+}
+
+.info-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  border: 1.5px solid var(--black);
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.info-item strong {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.info-item p {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.location-info .btn {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.map-box {
+  min-height: 390px;
+  border: 3px solid var(--black);
+  background:
+    linear-gradient(35deg, transparent 46%, #fff8 47%, #fff8 51%, transparent 52%),
+    linear-gradient(125deg, transparent 43%, #fff8 44%, #fff8 49%, transparent 50%),
+    #d5e4c8;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.map-road {
+  position: absolute;
+  width: 130%;
+  height: 28px;
+  background: #fff7df;
+  border: 2px solid #c2b9a0;
+  transform: rotate(-26deg);
+}
+
+.map-road.two {
+  transform: rotate(48deg);
+  width: 110%;
+}
+
+.map-road.three {
+  transform: rotate(7deg);
+  top: 28%;
+}
+
+.map-pin-card {
+  position: relative;
+  z-index: 2;
+  width: min(280px, 80%);
+  padding: 24px;
+  text-align: center;
+  background: var(--yellow);
+  border: 3px solid var(--black);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.map-pin-card .pin {
+  font-size: 35px;
+}
+
+.map-pin-card h3 {
+  margin-top: 8px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.map-pin-card p {
+  margin: 10px 0 17px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* FINAL CTA */
+
+.final-cta {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.final-cta .section-title {
+  font-size: clamp(38px, 7vw, 78px);
+}
+
+.final-cta p {
+  max-width: 490px;
+  margin: 18px auto 25px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.final-cta .btn {
+  min-height: 52px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 35px 0 90px;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-brand {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+
+.footer-brand small {
+  display: block;
+  margin-top: 8px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  line-height: 1.8;
+  font-weight: 500;
+  text-transform: none;
+  color: #c5c5c5;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.footer-bottom {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #494949;
+  color: #c5c5c5;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* MOBILE NAV */
+
+.mobile-bar {
+  display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 13px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .nav > .btn {
+    padding: 10px;
+  }
+
+  .hero-grid {
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 68px);
+  }
+
+  .hero-image-frame {
+    height: 380px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-image {
+    height: 270px;
+  }
+}
+
+@media (max-width: 650px) {
+  .container,
+  .nav {
+    width: 90%;
+  }
+
+  .announcement {
+    font-size: 9px;
+    letter-spacing: .8px;
+  }
+
+  .nav {
+    min-height: 68px;
+  }
+
+  .logo-symbol {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .logo-text {
+    font-size: 12px;
+  }
+
+  .logo-text small {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav > .btn {
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: 9px;
+    box-shadow: 2px 2px 0 var(--black);
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 38px 0 42px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero h1 {
+    margin-top: 19px;
+    font-size: clamp(53px, 14vw, 78px);
+    letter-spacing: -3.5px;
+  }
+
+  .hero-description {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .btn {
+    min-height: 43px;
+    padding: 11px 13px;
+    font-size: 10px;
+  }
+
+  .hero-image-frame {
+    height: 360px;
+    box-shadow: 6px 6px 0 var(--black);
+  }
+
+  .hero-sticker {
+    width: 92px;
+    height: 92px;
+    font-size: 13px;
+    right: -8px;
+  }
+
+  .marquee {
+    padding: 12px 0;
+  }
+
+  .marquee-track span {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .section-top {
+    display: block;
+    margin-bottom: 26px;
+  }
+
+  .section-title {
+    font-size: clamp(34px, 10vw, 48px);
+    letter-spacing: -1.8px;
+  }
+
+  .section-description {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+
+  .category-grid {
+    gap: 12px;
+  }
+
+  .category-card {
+    box-shadow: 3px 3px 0 var(--black);
+  }
+
+  .category-image {
+    height: 190px;
+  }
+
+  .category-content {
+    padding: 12px 10px;
+  }
+
+  .category-content h3 {
+    font-size: 14px;
+  }
+
+  .category-content p {
+    font-size: 10px;
+  }
+
+  .category-link {
+    font-size: 9px;
+  }
+
+  .statement {
+    padding: 57px 0;
+  }
+
+  .statement-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .statement h2 {
+    font-size: clamp(43px, 12vw, 62px);
+    letter-spacing: -2px;
+  }
+
+  .statement-copy {
+    font-size: 12px;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .fact {
+    padding: 8px 5px;
+  }
+
+  .fact strong {
+    font-size: 25px;
+  }
+
+  .fact span {
+    font-size: 8px;
+    letter-spacing: .4px;
+    line-height: 1.5;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .location-info {
+    padding: 21px;
+    box-shadow: 4px 4px 0 var(--black);
+  }
+
+  .location-info h3 {
+    font-size: 24px;
+  }
+
+  .map-box {
+    min-height: 300px;
+  }
+
+  .final-cta {
+    padding: 65px 0;
+  }
+
+  .final-cta .section-title {
+    font-size: clamp(39px, 12vw, 60px);
+  }
+
+  .final-cta p {
+    font-size: 12px;
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    gap: 15px;
+  }
+
+  .mobile-bar {
+    position: fixed;
+    z-index: 150;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px 5% calc(10px + env(safe-area-inset-bottom));
+    background: var(--bg);
+    border-top: var(--border);
+  }
+
+  .mobile-bar .btn {
+    min-height: 44px;
+    box-shadow: 2px 2px 0 var(--black);
+  }
+
+  body {
+    padding-bottom: 70px;
+  }
+
+  footer {
+    padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo-text {
+    font-size: 10px;
+  }
+
+  .nav > .btn {
+    font-size: 8px;
+    padding: 8px;
+  }
+
+  .category-image {
+    height: 155px;
+  }
+
+  .category-content h3 {
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 49px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="topbar">A LITTLE GREEN, A LOT OF GOODNESS · KUSHINAGAR</div>
-  <header>
-    <a class="brand" href="#home" aria-label="Green Cafe home"><span class="logo">♧</span><span>GREEN <span style="font-weight:400">CAFE</span></span></a>
-    <nav>
-      <a href="#menu">Our Menu</a>
-      <a href="#about">Our Story</a>
-      <a href="#visit">Find Us</a>
-      <a class="nav-cta" href="#visit">Visit Green Cafe ↗</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero" id="home" style="padding:0">
-      <div class="hero-copy">
-        <div class="eyebrow">Your cozy corner in Kushinagar</div>
-        <h1>Good food.<br><em>Good mood.</em></h1>
-        <p>Take a little break from the busy day. Enjoy refreshing drinks, comforting bites, and good moments at Green Cafe.</p>
-        <div class="hero-actions">
-          <a class="button" href="#menu">Explore the Menu <span>→</span></a>
-          <a class="button secondary" href="#visit">Get Directions</a>
-        </div>
-        <div class="hero-note"><span class="dots">✦ ✦ ✦</span> Fresh moments are better shared.</div>
-      </div>
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=85" alt="Freshly prepared coffee on a cafe table">
-        <div class="image-card"><strong>Your everyday happy place</strong><span>Relax · Refresh · Recharge</span></div>
-      </div>
-    </section>
+<div class="announcement">
+  LOCAL MARKET · BIG STYLE · EVERYDAY FINDS ✳
+</div>
 
-    <div class="trust-row">
-      <div class="trust-item"><span class="trust-icon">☕</span><div><strong>Made for your breaks</strong><span>Take a moment for yourself</span></div></div>
-      <div class="trust-item"><span class="trust-icon">🌿</span><div><strong>Fresh feel, cozy vibes</strong><span>A welcoming cafe experience</span></div></div>
-      <div class="trust-item"><span class="trust-icon">♡</span><div><strong>Better together</strong><span>Meet, chat, and make memories</span></div></div>
+<header>
+  <nav class="nav">
+    <a class="logo" href="#home" aria-label="Bhadrakali Wala Bajar home">
+      <span class="logo-symbol">B!</span>
+      <span class="logo-text">
+        Bhadrakali Wala Bajar
+        <small>FASHION / FAMILY / FINDS</small>
+      </span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
     </div>
 
-    <section id="menu">
-      <div class="section-head">
-        <div class="eyebrow">A little something for everyone</div>
-        <h2>Made to make you smile.</h2>
-        <p>From your coffee break to a quick bite with friends, find your next favorite here.</p>
-      </div>
-      <div class="menu-grid">
-        <article class="menu-card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Iced coffee">
-          <div class="menu-content"><div class="menu-title"><h3>Chilled Coffee</h3><span class="price">₹—</span></div><p>A cool, creamy pick-me-up for a refreshing break.</p></div>
-        </article>
-        <article class="menu-card">
-          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=80" alt="Fresh sandwich">
-          <div class="menu-content"><div class="menu-title"><h3>Fresh Sandwich</h3><span class="price">₹—</span></div><p>A satisfying bite for those little hunger moments.</p></div>
-        </article>
-        <article class="menu-card">
-          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Burger with fresh toppings">
-          <div class="menu-content"><div class="menu-title"><h3>Classic Burger</h3><span class="price">₹—</span></div><p>A comfort-food favorite, perfect for sharing good times.</p></div>
-        </article>
-        <article class="menu-card">
-          <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=80" alt="Hot coffee">
-          <div class="menu-content"><div class="menu-title"><h3>Hot Coffee</h3><span class="price">₹—</span></div><p>Warm, comforting, and made for a slower moment.</p></div>
-        </article>
-        <article class="menu-card">
-          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80" alt="Crispy french fries">
-          <div class="menu-content"><div class="menu-title"><h3>Crispy Fries</h3><span class="price">₹—</span></div><p>A golden, crunchy side for your favorite cafe treat.</p></div>
-        </article>
-        <article class="menu-card">
-          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="Refreshing cold drink">
-          <div class="menu-content"><div class="menu-title"><h3>Cool Refreshers</h3><span class="price">₹—</span></div><p>Bright, refreshing sips to lift your day.</p></div>
-        </article>
-      </div>
-    </section>
+    <a class="btn" href="#location">Find Us ↗</a>
+  </nav>
+</header>
 
-    <section class="about" id="about">
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85" alt="Warm and inviting cafe interior">
-      </div>
-      <div class="about-copy">
-        <div class="eyebrow">More than just a cafe</div>
-        <h2>A place to pause and enjoy.</h2>
-        <p>Some days call for a quick coffee. Others call for a long conversation with friends. Green Cafe is your spot to slow down, enjoy a bite, and make ordinary moments feel special.</p>
-        <p>Drop by with friends, meet someone new, or simply treat yourself to a little break.</p>
-        <div class="features">
-          <div class="feature"><span>✦</span><div>Comfortable cafe atmosphere</div></div>
-          <div class="feature"><span>☕</span><div>Drinks for every mood</div></div>
-          <div class="feature"><span>♡</span><div>Great for catching up</div></div>
-          <div class="feature"><span>📍</span><div>Easy to find in Kushinagar</div></div>
-        </div>
-        <a class="button" href="#visit">Plan Your Visit →</a>
-      </div>
-    </section>
+<main>
 
-    <section class="visit" id="visit">
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+      <span class="label">YOUR LOCAL SHOPPING SPOT ✳</span>
+
+      <h1>
+        SHOP<br>
+        YOUR<br>
+        <span>STYLE.</span>
+      </h1>
+
+      <p class="hero-description">
+        From everyday fashion to eye-catching accessories,
+        discover something new at Bhadrakali Wala Bajar.
+        Your next favourite find might be just around the corner.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#collections" class="btn">
+          Explore Collections ↓
+        </a>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Bhadrakali+Wala+Bajar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-dark"
+        >
+          Get Directions ↗
+        </a>
+      </div>
+
+      <div class="hero-note">
+        <span>★★★★★</span>
+        &nbsp; 4.3/5 GOOGLE RATING · 84 REVIEWS*
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image-frame">
+        <img
+          src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+          alt="Fashion shopping and clothing collection"
+          fetchpriority="high"
+        >
+        <div class="image-tag">STYLE STARTS HERE ↘</div>
+      </div>
+
+      <div class="hero-sticker">
+        GOOD<br>
+        FINDS.<br>
+        GOOD<br>
+        VIBES.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee" aria-label="Fashion clothing accessories and family shopping">
+  <div class="marquee-track">
+    <span>Fashion</span>
+    <span>Clothing</span>
+    <span>Accessories</span>
+    <span>Family Shopping</span>
+    <span>Local Finds</span>
+    <span>Fashion</span>
+    <span>Clothing</span>
+    <span>Accessories</span>
+    <span>Family Shopping</span>
+    <span>Local Finds</span>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+
+<section class="section collections" id="collections">
+  <div class="container">
+
+    <div class="section-top">
       <div>
-        <div class="eyebrow">Come say hello</div>
-        <h2>Your table is<br>waiting.</h2>
-        <p>Planning a coffee break or meeting friends? Find Green Cafe in the Kushinagar area and stop by for a little refresh.</p>
-        <div class="visit-actions">
-          <a class="button" href="https://www.google.com/maps/search/?api=1&query=Green+Cafe+Kushinagar" target="_blank" rel="noopener">Open Google Maps ↗</a>
-          <a class="button secondary" href="tel:9277077100">Call the Cafe</a>
+        <div class="section-kicker">01 / EXPLORE THE MARKET</div>
+        <h2 class="section-title">
+          YOUR STYLE.<br>
+          YOUR FINDS.
+        </h2>
+      </div>
+
+      <p class="section-description">
+        Browse different fashion categories and discover styles
+        for everyday wear, special occasions and family shopping.
+      </p>
+    </div>
+
+    <div class="category-grid">
+
+      <a href="#location" class="category-card">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=650&q=80"
+            alt="Women's fashion and clothing"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-content">
+          <span class="category-number">CATEGORY / 01</span>
+          <h3>Women's Fashion</h3>
+          <p>Discover clothing and styles for different occasions.</p>
+          <span class="category-link">Explore ↗</span>
+        </div>
+      </a>
+
+      <a href="#location" class="category-card">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=650&q=80"
+            alt="Men's clothing and fashion"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-content">
+          <span class="category-number">CATEGORY / 02</span>
+          <h3>Men's Wear</h3>
+          <p>Explore styles for everyday wear and outings.</p>
+          <span class="category-link">Explore ↗</span>
+        </div>
+      </a>
+
+      <a href="#location" class="category-card">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=650&q=80"
+            alt="Children's clothing and family fashion"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-content">
+          <span class="category-number">CATEGORY / 03</span>
+          <h3>Kids & Family</h3>
+          <p>Make shopping a fun family experience.</p>
+          <span class="category-link">Explore ↗</span>
+        </div>
+      </a>
+
+      <a href="#location" class="category-card">
+        <div class="category-image">
+          <img
+            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=650&q=80"
+            alt="Jewellery and fashion accessories"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="category-content">
+          <span class="category-number">CATEGORY / 04</span>
+          <h3>Jewellery</h3>
+          <p>Accessories and finishing touches for your look.</p>
+          <span class="category-link">Explore ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / BRAND STATEMENT -->
+
+<section class="statement" id="about">
+  <div class="container statement-grid">
+
+    <div>
+      <div class="section-kicker">02 / THE MARKET EXPERIENCE</div>
+
+      <h2>
+        MORE<br>
+        THAN<br>
+        <span>SHOPPING.</span>
+      </h2>
+    </div>
+
+    <div>
+      <p class="statement-copy">
+        A local market is more than rows of shops. It is a place to
+        explore new looks, discover accessories and spend time
+        shopping with family.
+        <br><br>
+        Visit Bhadrakali Wala Bajar and discover what catches your eye.
+      </p>
+
+      <div class="feature-list">
+
+        <div class="feature-row">
+          <div class="feature-icon">✳</div>
+          <div>
+            <strong>Fashion Finds</strong>
+            <p>Explore styles for different occasions.</p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-icon">✦</div>
+          <div>
+            <strong>Accessories & Jewellery</strong>
+            <p>Discover the little details that complete your look.</p>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-icon">↗</div>
+          <div>
+            <strong>Family Shopping</strong>
+            <p>Explore shopping options for different family needs.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MARKET FACTS -->
+
+<section class="facts" aria-label="Market information">
+  <div class="container facts-grid">
+
+    <div class="fact">
+      <strong>4.3★</strong>
+      <span>Google Rating*</span>
+    </div>
+
+    <div class="fact">
+      <strong>84</strong>
+      <span>Google Reviews*</span>
+    </div>
+
+    <div class="fact">
+      <strong>LOCAL</strong>
+      <span>Shopping Destination</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section reviews" id="reviews">
+  <div class="container">
+
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">03 / SHOPPER HIGHLIGHTS</div>
+        <h2 class="section-title">
+          THE WORD<br>
+          ON THE STREET.
+        </h2>
+      </div>
+
+      <p class="section-description">
+        The Google Maps listing in the reference screenshot
+        shows a 4.3-star rating and 84 reviews.
+      </p>
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <h3>Fashion & Finds</h3>
+        <p>
+          The listing highlights clothing shopping and a range
+          of imitation jewellery and accessories.
+        </p>
+        <small>LISTING HIGHLIGHT · NOT A DIRECT QUOTE</small>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <h3>Family Shopping</h3>
+        <p>
+          Visitor highlights describe the market as a
+          budget-friendly option for family shopping.
+        </p>
+        <small>LISTING HIGHLIGHT · NOT A DIRECT QUOTE</small>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <h3>Plan Your Visit</h3>
+        <p>
+          Check the live map listing for current opening hours,
+          directions and the latest customer feedback.
+        </p>
+        <small>CHECK LIVE GOOGLE MAPS INFORMATION</small>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+
+<section class="section location" id="location">
+  <div class="container">
+
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">04 / FIND THE MARKET</div>
+        <h2 class="section-title">
+          LET'S GET<br>
+          YOU THERE.
+        </h2>
+      </div>
+
+      <p class="section-description">
+        Ready to visit? Open Google Maps to check the location
+        and plan your route.
+      </p>
+    </div>
+
+    <div class="location-grid">
+
+      <div class="location-info">
+        <h3>Bhadrakali<br>Wala Bajar.</h3>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <strong>Market Name</strong>
+            <p>Bhadrakali Wala Bajar<br>Clothes Market</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">★</div>
+          <div>
+            <strong>Google Rating</strong>
+            <p>4.3/5 · 84 reviews, as shown in the reference screenshot.</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">◷</div>
+          <div>
+            <strong>Opening Hours</strong>
+            <p>The reference screenshot shows closing at 12 AM. Verify current hours on Google Maps.</p>
+          </div>
+        </div>
+
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=Bhadrakali+Wala+Bajar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Google Maps ↗
+        </a>
+      </div>
+
+      <div class="map-box" aria-label="Decorative map illustration">
+        <div class="map-road"></div>
+        <div class="map-road two"></div>
+        <div class="map-road three"></div>
+
+        <div class="map-pin-card">
+          <div class="pin">📍</div>
+          <h3>Find The Market.</h3>
+          <p>
+            Open Google Maps to check the exact location,
+            directions and current opening hours.
+          </p>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Bhadrakali+Wala+Bajar"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-dark"
+          >
+            Get Directions ↗
+          </a>
         </div>
       </div>
-      <div class="visit-card">
-        <div class="visit-line"><span class="icon">📍</span><div><strong>Location</strong><span>Green Cafe, Kushinagar, Uttar Pradesh</span></div></div>
-        <div class="visit-line"><span class="icon">🕒</span><div><strong>Opening Hours</strong><span>Hours can be added here once confirmed.</span></div></div>
-        <div class="visit-line"><span class="icon">☎️</span><div><strong>Contact</strong><span>Tap “Call the Cafe” to connect.</span></div></div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div><strong>GREEN CAFE</strong><div class="demo-note">Website concept preview · Menu, prices, timings and contact details should be confirmed by the owner.</div></div>
-    <div>© <span id="year"></span> Green Cafe · Made with care</div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="final-cta">
+  <div class="container">
+
+    <div class="section-kicker">YOUR NEXT SHOPPING STOP</div>
+
+    <h2 class="section-title">
+      GO FIND<br>
+      SOMETHING<br>
+      <span style="color:#e9ff47;text-shadow:3px 3px 0 #171717;-webkit-text-stroke:1px #171717;">DIFFERENT.</span>
+    </h2>
+
+    <p>
+      Discover fashion, accessories and local shopping.
+      Your next market visit starts here.
+    </p>
+
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Bhadrakali+Wala+Bajar"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn"
+    >
+      Let's Go Shopping ↗
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        BHADRAKALI<br>WALA BAJAR.
+        <small>
+          Fashion. Family. Finds.<br>
+          A local shopping destination.
+        </small>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © <span id="year"></span> Bhadrakali Wala Bajar · Website Demo Preview.<br>
+      Images are illustrative. Business information should be verified before publication.
+    </div>
+
+  </div>
+</footer>
+
+<!-- MOBILE BOTTOM BAR -->
+
+<div class="mobile-bar">
+  <a href="#collections" class="btn btn-pink">Explore Styles ↓</a>
+
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Bhadrakali+Wala+Bajar"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn"
+  >
+    Directions ↗
+  </a>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
-</html>
+  </html>
